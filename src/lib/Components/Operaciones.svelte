@@ -24,7 +24,7 @@
           break;
         case "/":
           // Asegurando que n2 no sea 0
-          n1 = n2 * Math.ceil(Math.random() * 10) ; // Asegurando que n1 sea múltiplo de n2
+          n1 = n2 * Math.ceil(Math.random() * 10); // Asegurando que n1 sea múltiplo de n2
           //n1 < n2 ? (correctAnswer = n2 / n1) : (correctAnswer = n1 / n2);
           correctAnswer = n1 / n2;
           break;
@@ -53,7 +53,6 @@
     listNumbers = [...listNumbers];
   }
 </script>
-
 
 <h2>Operaciones Matematicas :</h2>
 
@@ -87,11 +86,10 @@
 
 <style>
   .box_operation {
-   
     width: 100%;
     margin-bottom: 1em;
     border-radius: 5px;
-   
+
     color: #fff;
     padding: 0.2em;
     display: grid;
@@ -126,10 +124,10 @@
     height: 20px;
     width: 20px;
   }
-  .box_button{
+  .box_button {
     width: 100%;
   }
-  button{
+  button {
     background-color: rgb(116, 230, 11);
     color: #111;
     font-weight: bold;

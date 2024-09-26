@@ -3,6 +3,9 @@
   export let showChallengePanel;
 </script>
 
+<div>
+  <img class="banner" src="./img/BANNER.jpg" alt="">
+</div>
 <div class="container">
   <div class="functions" on:click={() => showComponent("+")}>
     <img src="./img/sumar.png" alt="" />
@@ -24,6 +27,10 @@
 </div>
 
 <style>
+  .banner{
+    width: 50%;
+    height: 150px;
+  }
   .container {
     height: auto;
     width: 100%;
