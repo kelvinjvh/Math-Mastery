@@ -53,12 +53,6 @@
     listNumbers = [...listNumbers];
   }
 
-  let contenedores = "contenedores elementales :S";
-  console.log(contenedores);
-
-  const controladores = "contenedores";
-  console.log(controladores);
-
 </script>
 
 <h2>Operaciones Matematicas!!</h2>
@@ -138,5 +132,6 @@
     color: #fff;
     font-weight: bold;
     display: inline-block;
+    font-size: 1.2em;
   }
 </style>

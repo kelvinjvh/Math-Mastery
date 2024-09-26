@@ -3,42 +3,43 @@
   export let showChallengePanel;
 </script>
 
-<div>
-  <img class="banner" src="./img/BANNER.jpg" alt="">
-</div>
+
 <div class="container">
-  <div class="functions" on:click={() => showComponent("+")}>
-   <p class="signo">➕</p>
-    <p>Sumar</p>
-  </div>
-  <div class="functions" on:click={() => showComponent("-")}>
-    <p class="signo">➖</p>
-    <p>Restar</p>
-  </div>
-  <div class="functions" on:click={() => showComponent("*")}>
-    <p class="signo">✖️</p>
-    <p>Multiplicar</p>
-  </div>
-  <div class="functions" on:click={() => showComponent("/")}>
-    <p class="signo">➗</p>
-    <p>Dividir</p>
-  </div>
-  <div class="button" on:click={showChallengePanel}> ⬅️ Voler Atras</div>
+  <div class="row">
+    <div class="functions" on:click={() => showComponent("+")}>
+      <p class="signo">➕</p>
+       <p>Sumar</p>
+     </div>
+     <div class="functions" on:click={() => showComponent("-")}>
+       <p class="signo">➖</p>
+       <p>Restar</p>
+     </div>
+     <div class="functions" on:click={() => showComponent("*")}>
+       <p class="signo">✖️</p>
+       <p>Multiplicar</p>
+     </div>
+     <div class="functions" on:click={() => showComponent("/")}>
+       <p class="signo">➗</p>
+       <p>Dividir</p>
+     </div>
+     </div>
+     <div class="button" on:click={showChallengePanel}> ⬅️ Voler Atras</div>
 </div>
 
 <style>
-  .banner{
-    width: 50%;
-    height: 150px;
-  }
   .container {
-    height: auto;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    height: 60vh;
+    display: grid;
+    place-items: center;
+    margin-top: 3em;
+  }
+  .row{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
     gap: 1em;
+    outline: 1px solid #fff;
+    margin-bottom: 1em;
   }
   .functions {
     background-color: rgb(33, 150, 43);
@@ -65,11 +66,12 @@
     font-size:2.5em;
   }
   .button {
-    width: 85%;
+    width: 84%;
     padding: 1em;
     background-color: rgb(33, 150, 43);
     border-radius: 5px;
     font-weight: bold;
     font-size: 1em;
+    margin: 0 auto;
   }
 </style>
