@@ -54,6 +54,7 @@
   }
 </script>
 
+
 <h2>Operaciones Matematicas :</h2>
 
 <div class="box_operation">
@@ -62,7 +63,7 @@
       <div class="box_datos">
         <p>{number.n2} {operationSigno} {number.n1}</p>
         =<input
-          type="text"
+          type="number"
           bind:value={number.answer}
           on:input={() => verification(number)}
         /> <span>{number.feedback}</span>
