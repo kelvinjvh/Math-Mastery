@@ -45,6 +45,7 @@
   generateNumber(6);
 
   function verification(number) {
+    
     if (parseInt(number.correctAnswer) === parseInt(number.answer)) {
       number.feedback = "✅";
     } else {
@@ -93,13 +94,13 @@
     display: grid;
     place-items: center;
   }
+
   .box_datos {
     font-size: 1.8em;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin-bottom: 1em;
-  
+    margin-bottom: .8em;
     width: 100%;
     border-radius: 3px;
     padding: .3em;
