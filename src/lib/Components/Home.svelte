@@ -8,22 +8,22 @@
 </div>
 <div class="container">
   <div class="functions" on:click={() => showComponent("+")}>
-    <img src="./img/sumar.png" alt="" />
+   <p class="signo">➕</p>
     <p>Sumar</p>
   </div>
   <div class="functions" on:click={() => showComponent("-")}>
-    <img src="./img/restar.png" alt="" />
+    <p class="signo">➖</p>
     <p>Restar</p>
   </div>
   <div class="functions" on:click={() => showComponent("*")}>
-    <img src="./img/multiplicar.png" alt="" />
+    <p class="signo">✖️</p>
     <p>Multiplicar</p>
   </div>
   <div class="functions" on:click={() => showComponent("/")}>
-    <img src="./img/dividir.png" alt="" />
+    <p class="signo">➗</p>
     <p>Dividir</p>
   </div>
-  <div class="button" on:click={showChallengePanel}>Voler Atras</div>
+  <div class="button" on:click={showChallengePanel}> ⬅️ Voler Atras</div>
 </div>
 
 <style>
@@ -45,6 +45,10 @@
     border-radius: 5px;
     padding: 1em;
     box-shadow: 0 0 3px #fff;
+    height: 130px;
+    width: 130px;
+    display: grid;
+    place-items: center;
   }
   img {
     height: 100px;
@@ -53,12 +57,16 @@
   p {
     margin: 0;
     color: #111;
+    font-size: 1em;
     font-weight: bold;
+  }
+  .signo{
+    font-size:2.5em;
   }
   .button {
     width: 85%;
     padding: 1em;
-    background-color: rgb(116, 230, 11);
+    background-color: rgb(33, 150, 43);
     border-radius: 5px;
     font-weight: bold;
     font-size: 1em;

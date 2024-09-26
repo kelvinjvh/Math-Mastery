@@ -71,7 +71,7 @@
           type="number"
           bind:value={number.answer}
           on:input={() => verification(number)}
-        /> <span>{number.feedback}</span>
+        /> <span>{number.feedback === "" ? "❓" : number.feedback}</span>
       </div>
     {:else}
       <div class="box_datos">
@@ -80,13 +80,13 @@
           type="number"
           bind:value={number.answer}
           on:input={() => verification(number)}
-        /> <span>{number.feedback}</span>
+        /> <span>{number.feedback === "" ? "❓" : number.feedback}</span>
       </div>
     {/if}
   {/each}
   <div class="box_button">
-    <button on:click={showComponent}>Reiniciar</button>
-    <button on:click={() => generateNumber(6)}>Siguiente</button>
+    <button on:click={showComponent}>Reiniciar 🔄</button>
+    <button on:click={() => generateNumber(6)}>Siguiente 👉</button>
   </div>
 </div>
 
@@ -134,8 +134,8 @@
     width: 100%;
   }
   button {
-    background-color: rgb(116, 230, 11);
-    color: #111;
+    background-color: rgb(33, 150, 43);
+    color: #fff;
     font-weight: bold;
     display: inline-block;
   }
