@@ -27,8 +27,8 @@
   .button {
     padding: 1em;
     border-radius: 5px;
-    background-color: rgb(116, 230, 11);
-    color: #111;
+    background-color: rgb(33, 150, 43);
+    color: #fff;
     font-weight: bold;
     font-size: 1.2em;
     transition: 0.5s;

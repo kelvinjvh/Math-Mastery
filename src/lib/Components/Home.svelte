@@ -41,14 +41,15 @@
     gap: 1em;
   }
   .functions {
-    background-color: #fff;
+    background-color: rgb(33, 150, 43);
     border-radius: 5px;
     padding: 1em;
-    box-shadow: 0 0 3px #fff;
+    box-shadow: 0 0 3px rgb(33, 150, 43);
     height: 130px;
     width: 130px;
     display: grid;
     place-items: center;
+   
   }
   img {
     height: 100px;
@@ -56,7 +57,7 @@
   }
   p {
     margin: 0;
-    color: #111;
+    color: #fff;
     font-size: 1em;
     font-weight: bold;
   }

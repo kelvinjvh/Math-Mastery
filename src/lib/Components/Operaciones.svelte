@@ -105,7 +105,7 @@
     justify-content: space-evenly;
     align-items: center;
     margin-bottom: 1em;
-    outline: 1px solid #fff;
+  
     width: 100%;
     border-radius: 3px;
     padding: .3em;
