@@ -88,23 +88,24 @@
     width: 100%;
     margin-bottom: 1em;
     border-radius: 5px;
-
     color: #fff;
-    padding: 0.2em;
     display: grid;
     place-items: center;
   }
   .box_datos {
-    font-size: 1.5em;
+    font-size: 1.8em;
     display: flex;
-    justify-self: center;
+    justify-content: space-evenly;
     align-items: center;
     margin-bottom: 1em;
+    outline: 1px solid #fff;
+    width: 100%;
+    border-radius: 3px;
+    padding: .3em;
   }
   p {
     margin: 0;
-    letter-spacing: 0.1em;
-    width: 150px;
+    width: 120px;
   }
   input {
     width: 60px;
@@ -120,7 +121,6 @@
     font-weight: bold;
   }
   span {
-    height: 20px;
     width: 20px;
   }
   .box_button {
