@@ -52,9 +52,16 @@
     }
     listNumbers = [...listNumbers];
   }
+
+  let contenedores = "contenedores elementales :S";
+  console.log(contenedores);
+
+  const controladores = "contenedores";
+  console.log(controladores);
+
 </script>
 
-<h2>Operaciones Matematicas :</h2>
+<h2>Operaciones Matematicas!!</h2>
 <div class="box_operation">
   {#each listNumbers as number}
     {#if operationSigno === "-" && number.n1 < number.n2}
