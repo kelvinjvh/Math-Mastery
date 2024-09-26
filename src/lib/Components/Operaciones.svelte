@@ -71,7 +71,7 @@
       <div class="box_datos">
         <p>{number.n1} {operationSigno} {number.n2}</p>
         =<input
-          type="text"
+          type="number"
           bind:value={number.answer}
           on:input={() => verification(number)}
         /> <span>{number.feedback}</span>
