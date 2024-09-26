@@ -55,7 +55,6 @@
 </script>
 
 <h2>Operaciones Matematicas :</h2>
-
 <div class="box_operation">
   {#each listNumbers as number}
     {#if number.n1 < number.n2}
