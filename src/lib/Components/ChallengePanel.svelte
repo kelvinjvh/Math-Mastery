@@ -30,7 +30,7 @@
     background-color: rgb(33, 150, 43);
     color: #fff;
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1.5em;
     transition: 0.5s;
     width: 90%;
     margin: 0 auto 1em;
@@ -39,7 +39,7 @@
     place-items: center;
   }
   span{
-    width: 50%;
+    width: 70%;
   }
   .button:hover {
     transform: scale(1.1);
