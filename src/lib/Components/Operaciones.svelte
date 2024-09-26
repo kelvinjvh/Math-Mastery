@@ -57,7 +57,7 @@
 <h2>Operaciones Matematicas :</h2>
 <div class="box_operation">
   {#each listNumbers as number}
-    {#if number.n1 < number.n2}
+    {#if operationSigno === "-" && number.n1 < number.n2}
       <div class="box_datos">
         <p>{number.n2} {operationSigno} {number.n1}</p>
         =<input
