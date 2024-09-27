@@ -58,7 +58,9 @@
   <div class="content_btn">
     <p class="btn_close" on:click={ShowComponentCanvas}>❌</p>
   </div>
-  <canvas
+  
+</div>
+<canvas
     bind:this={canvas}
     on:mousedown={startPosition}
     on:mouseup={finishedPosition}
@@ -68,7 +70,6 @@
     on:touchmove={draw}
     class="canvas"
   ></canvas>
-</div>
 
 <style>
   .container_canvas {
