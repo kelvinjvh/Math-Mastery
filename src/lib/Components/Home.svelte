@@ -1,8 +1,9 @@
 <script>
+  import Header from "./Header.svelte";
+
   export let showComponent;
   export let showChallengePanel;
 </script>
-
 
 <div class="container">
   <div class="row">

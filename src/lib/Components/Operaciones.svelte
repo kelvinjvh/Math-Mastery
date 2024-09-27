@@ -1,10 +1,16 @@
 <script>
+  import Canvas from "./Canvas.svelte";
   import ListData from "./ListData.svelte";
 
   let listNumbers = [];
+  let showCanvas = false;
   export let operationSigno;
   export let showComponent;
   export let Rangodifficulty;
+
+  function ShowComponentCanvas(){
+    showCanvas=!showCanvas;
+  }
 
   function generateNumber(count) {
     listNumbers = [];
@@ -47,7 +53,6 @@
   generateNumber(6);
 
   function verification(number) {
-
     if (parseInt(number.correctAnswer) === parseInt(number.answer)) {
       number.feedback = "✅";
     } else {
@@ -55,7 +60,17 @@
     }
     listNumbers = [...listNumbers];
   }
-
 </script>
 
-<ListData {listNumbers} {operationSigno} {showComponent} {generateNumber} {verification}/>
+{#if showCanvas}
+  <Canvas {ShowComponentCanvas}/>
+{:else}
+  <ListData
+    {listNumbers}
+    {operationSigno}
+    {showComponent}
+    {generateNumber}
+    {verification}
+    {ShowComponentCanvas}
+  />
+{/if}

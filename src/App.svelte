@@ -18,12 +18,13 @@
     Rangodifficulty = difficulty;
     console.log(difficulty);
   }
+
 </script>
 
 {#if ShowPanelOperations}
   <ChallengePanel {showChallengePanel} />
 {:else if component}
-  <Operaciones {operationSigno} {showComponent} {Rangodifficulty}/>
+  <Operaciones {operationSigno} {showComponent} {Rangodifficulty} />
 {:else}
   <Home {showComponent} {showChallengePanel} />
 {/if}

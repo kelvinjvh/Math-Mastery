@@ -1,11 +1,15 @@
 <script>
+  import Header from "./Header.svelte";
+
   export let verification;
   export let operationSigno;
   export let listNumbers;
   export let showComponent;
   export let generateNumber;
+  export let ShowComponentCanvas;
 </script>
 
+<Header {ShowComponentCanvas}/>
 <h2>Operaciones Matematicas!!</h2>
 <div class="box_operation">
   {#each listNumbers as number}
