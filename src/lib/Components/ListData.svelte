@@ -1,0 +1,88 @@
+<script>
+  export let verification;
+  export let operationSigno;
+  export let listNumbers;
+  export let showComponent;
+  export let generateNumber;
+</script>
+
+<h2>Operaciones Matematicas!!</h2>
+<div class="box_operation">
+  {#each listNumbers as number}
+    {#if operationSigno === "-" && number.n1 < number.n2}
+      <div class="box_datos">
+        <p>{number.n2} {operationSigno} {number.n1}</p>
+        =<input
+          type="number"
+          bind:value={number.answer}
+          on:input={() => verification(number)}
+        /> <span>{number.feedback === "" ? "❓" : number.feedback}</span>
+      </div>
+    {:else}
+      <div class="box_datos">
+        <p>{number.n1} {operationSigno} {number.n2}</p>
+        =<input
+          type="number"
+          bind:value={number.answer}
+          on:input={() => verification(number)}
+        /> <span>{number.feedback === "" ? "❓" : number.feedback}</span>
+      </div>
+    {/if}
+  {/each}
+  <div class="box_button">
+    <button on:click={showComponent}>Reiniciar 🔄</button>
+    <button on:click={() => generateNumber(6)}>Siguiente 👉</button>
+  </div>
+</div>
+
+<style>
+  .box_operation {
+    width: 100%;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    color: #fff;
+    display: grid;
+    place-items: center;
+  }
+
+  .box_datos {
+    font-size: 1.8em;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 0.8em;
+    width: 100%;
+    border-radius: 3px;
+    padding: 0.3em;
+  }
+  p {
+    margin: 0;
+    width: 120px;
+  }
+  input {
+    width: 60px;
+    height: 30px;
+    border: none;
+    outline: none;
+    background-color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    color: #111;
+    margin-left: 0.7em;
+    font-size: 0.8em;
+    font-weight: bold;
+  }
+  span {
+    width: 20px;
+  }
+  .box_button {
+    width: 100%;
+  }
+  button {
+    background-color: rgb(33, 150, 43);
+    color: #fff;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 1.2em;
+  }
+</style>
