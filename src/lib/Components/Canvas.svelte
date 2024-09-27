@@ -67,8 +67,7 @@ function draw(e) {
 <style>
   .canvas {
     background-color: rgb(255, 232, 27);
-    width: 100%;
-    height: 100vh;
+   
     position: absolute;
     top: 0;
     left: 0;
