@@ -42,8 +42,8 @@ h1 {
 #app {
   width: 100%;
   margin: 0 auto;
-  padding: 1rem;
   text-align: center;
+  overflow: hidden;
 }
 
 button {

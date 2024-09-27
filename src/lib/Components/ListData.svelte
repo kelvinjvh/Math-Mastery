@@ -54,7 +54,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.4em;
     width: 100%;
     border-radius: 3px;
     padding: 0.3em;

@@ -88,10 +88,12 @@
       left: 0;
       width: 100%; /* Asegúrate de que el canvas ocupe el 100% del contenedor */
       height: 100%; /* Asegúrate de que el canvas ocupe el 100% del contenedor */
+
     }
   
     .content_btn {
-      width: 100%;
+      width: 90%;
+      margin: 0 auto;
       display: flex;
       justify-content: flex-end;
       position: relative; /* Para posicionar el botón dentro de este contenedor */

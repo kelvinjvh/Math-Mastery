@@ -7,12 +7,12 @@
 
 <style>
     .header{
-        width: 100%;
+        width: 90%;
         display: flex;
         align-items: flex-end;
         justify-content: flex-end;
         font-size: 1.5em;
-        
+        margin: 1em auto;
     }
     .pencil{
         border-radius: 50%;
