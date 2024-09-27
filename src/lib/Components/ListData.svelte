@@ -15,7 +15,7 @@
   {#each listNumbers as number}
     {#if operationSigno === "-" && number.n1 < number.n2}
       <div class="box_datos">
-        <p>{number.n2} {operationSigno} {number.n1}</p>
+        <p>{number.n2} <span>{operationSigno}</span> {number.n1}</p>
         =<input
           type="number"
           bind:value={number.answer}
@@ -24,7 +24,7 @@
       </div>
     {:else}
       <div class="box_datos">
-        <p>{number.n1} {operationSigno} {number.n2}</p>
+        <p>{number.n1} <span>{operationSigno}</span> {number.n2}</p>
         =<input
           type="number"
           bind:value={number.answer}
@@ -54,7 +54,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin-bottom: 0.8em;
+    margin-bottom: 0.5em;
     width: 100%;
     border-radius: 3px;
     padding: 0.3em;
@@ -62,6 +62,9 @@
   p {
     margin: 0;
     width: 120px;
+  }
+  span{
+    font-size: .7em;
   }
   input {
     width: 60px;

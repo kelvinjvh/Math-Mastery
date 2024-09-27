@@ -7,19 +7,19 @@
 
 <div class="container">
   <div class="row">
-    <div class="functions" on:click={() => showComponent("+")}>
+    <div class="functions" on:click={() => showComponent("➕")}>
       <p class="signo">➕</p>
        <p>Sumar</p>
      </div>
-     <div class="functions" on:click={() => showComponent("-")}>
+     <div class="functions" on:click={() => showComponent("➖")}>
        <p class="signo">➖</p>
        <p>Restar</p>
      </div>
-     <div class="functions" on:click={() => showComponent("*")}>
+     <div class="functions" on:click={() => showComponent("✖")}>
        <p class="signo">✖️</p>
        <p>Multiplicar</p>
      </div>
-     <div class="functions" on:click={() => showComponent("/")}>
+     <div class="functions" on:click={() => showComponent("➗")}>
        <p class="signo">➗</p>
        <p>Dividir</p>
      </div>

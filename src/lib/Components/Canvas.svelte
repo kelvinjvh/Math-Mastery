@@ -1,82 +1,67 @@
 <script>
-    import { onMount } from "svelte";
-    export let ShowComponentCanvas;
-    
-    let canvas;
-    let ctx;
-    let drawing = false;
+  import { onMount } from 'svelte';
 
-    // Iniciar dibujo (para mouse y touch)
-    function startDrawing(event) {
-        event.preventDefault();  // Previene el scroll en dispositivos móviles
-        drawing = true;
+export let ShowComponentCanvas;
+let canvas;
+let ctx; // Solo declara ctx aquí
 
-        // Si es un evento de touch, obtener las coordenadas del toque
-        const { offsetX, offsetY } = getCoordinates(event);
-        ctx.beginPath();
-        ctx.moveTo(offsetX, offsetY);
-    }
+let painting = false;
 
-    // Dibujar (para mouse y touch)
-    function draw(event) {
-        if (!drawing) return;
+// Configurar el canvas cuando el componente se monte
+onMount(() => {
+  ctx = canvas.getContext("2d");
+  canvas.height = window.innerHeight * 0.5; // Ajusta el tamaño como prefieras
+  canvas.width = window.innerWidth * 0.8;   // Ajusta el tamaño como prefieras
+});
 
-        // Obtener las coordenadas del evento
-        const { offsetX, offsetY } = getCoordinates(event);
-        ctx.lineTo(offsetX, offsetY);
-        ctx.stroke();
-    }
+// Iniciar dibujo
+function startPosition(e) {
+  painting = true;
+  draw(e); // Llama a draw para comenzar inmediatamente
+}
 
-    // Terminar dibujo (para mouse y touch)
-    function stopDrawing() {
-        drawing = false;
-        ctx.closePath();
-    }
+// Finalizar dibujo
+function finishedPosition() {
+  painting = false;
+  ctx.beginPath(); // Reinicia el path al terminar de dibujar
+}
 
-    // Obtener las coordenadas para eventos de mouse y touch
-    function getCoordinates(event) {
-        if (event.touches) {
-            const touch = event.touches[0];
-            const rect = canvas.getBoundingClientRect();
-            return {
-                offsetX: touch.clientX - rect.left,
-                offsetY: touch.clientY - rect.top
-            };
-        } else {
-            return {
-                offsetX: event.offsetX,
-                offsetY: event.offsetY
-            };
-        }
-    }
+// Función para dibujar
+function draw(e) {
+  if (!painting) return; // Solo dibuja si painting es true
 
-    // Configurar el canvas cuando el componente se monta
-    function setupCanvas() {
-        ctx = canvas.getContext('2d');
-        ctx.strokeStyle = 'black'; // Color de la línea
-        ctx.lineWidth = 2;         // Ancho de la línea
-    }
+  ctx.lineWidth = 4;
+  ctx.lineCap = "round";
 
-    // Hook de ciclo de vida para montar el canvas
-    onMount(() => {
-        setupCanvas();
-    });
+  let x, y;
+
+  if (e.type === "mousemove") {
+    x = e.clientX - canvas.offsetLeft;  // Ajusta para la posición relativa
+    y = e.clientY - canvas.offsetTop;
+  } else if (e.type === "touchmove") {
+    const touch = e.touches[0];
+    x = touch.clientX - canvas.offsetLeft;
+    y = touch.clientY - canvas.offsetTop;
+  }
+
+  ctx.lineTo(x, y);
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(x, y);
+}
 </script>
 
 <div class="container_canvas">
-    <div class="content_btn">
-        <p class="btn_close" on:click={ShowComponentCanvas}>❌</p>
-    </div>
-    <canvas class="canvas"  bind:this={canvas} 
-    width="500" 
-    height="400"
-    on:mousedown={startDrawing}
-    on:mousemove={draw}
-    on:mouseup={stopDrawing}
-    on:mouseleave={stopDrawing}
-    on:touchstart={startDrawing}
+  <div class="content_btn">
+    <p class="btn_close" on:click={ShowComponentCanvas}>❌</p>
+  </div>
+  <canvas
+    bind:this={canvas}
+    on:touchstart={startPosition}
+    on:touchend={finishedPosition}
     on:touchmove={draw}
-    on:touchend={stopDrawing}></canvas>
+    class="canvas"
+  ></canvas>
 </div>
 
 <style>
@@ -88,12 +73,13 @@
     top: 0;
     left: 0;
   }
-  .content_btn{
+  .content_btn {
+    border: 1px solid red;
     width: 100%;
     display: flex;
     justify-content: flex-end;
   }
-  .btn_close{
+  .btn_close {
     position: relative;
     z-index: 10;
     height: 50px;

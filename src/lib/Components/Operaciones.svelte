@@ -21,16 +21,16 @@
       let correctAnswer;
 
       switch (operationSigno) {
-        case "+":
+        case "➕":
           correctAnswer = n1 + n2;
           break;
-        case "-":
+        case "➖":
           n1 < n2 ? (correctAnswer = n2 - n1) : (correctAnswer = n1 - n2);
           break;
-        case "*":
+        case "✖":
           correctAnswer = n1 * n2;
           break;
-        case "/":
+        case "➗":
           // Asegurando que n2 no sea 0
           n1 = n2 * Math.ceil(Math.random() * 10); // Asegurando que n1 sea múltiplo de n2
           //n1 < n2 ? (correctAnswer = n2 / n1) : (correctAnswer = n1 / n2);
