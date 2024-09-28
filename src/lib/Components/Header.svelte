@@ -16,12 +16,12 @@
     }
     .pencil{
         border-radius: 50%;
-        height: 60px;
-        width: 60px;
+        height: 50px;
+        width: 50px;
         background-color: #fff;
         display: grid;
         place-items: center;
-        font-size: 1.3em;
+        font-size: 1.1em;
         cursor: pointer;
         box-shadow: 0 0 5px #fff;
     }
