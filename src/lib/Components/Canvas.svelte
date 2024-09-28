@@ -47,24 +47,21 @@
     ctx.moveTo(x, y);
   }
 
-  // Asegurar que el canvas se ajuste al tamaño de la ventana al redimensionar
-  window.addEventListener("resize", () => {
-    canvas.height = window.innerHeight;
-    canvas.width = window.innerWidth;
-  });
+  function ClearCanvas(){
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+
 </script>
 
 <div class="container_canvas">
   <div class="content_btn">
+    <p class="btnClear" on:click={ClearCanvas}>🔄</p>
     <p class="btn_close" on:click={ShowComponentCanvas}>❌</p>
   </div>
   
 </div>
 <canvas
     bind:this={canvas}
-    on:mousedown={startPosition}
-    on:mouseup={finishedPosition}
-    on:mousemove={draw}
     on:touchstart={startPosition}
     on:touchend={finishedPosition}
     on:touchmove={draw}
@@ -92,11 +89,18 @@
     width: 90%;
     margin: 0 auto;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     position: relative; /* Para posicionar el botón dentro de este contenedor */
     z-index: 10; /* Asegura que esté sobre el canvas */
   }
-
+  .btnClear{
+   padding:0 .8em;
+   background-color: #222;
+   border-radius: 5px;
+   font-weight: bold;
+   font-size: 2em;
+   cursor: pointer;
+  }
   .btn_close {
     height: 50px;
     width: 50px;

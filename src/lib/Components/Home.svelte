@@ -24,7 +24,7 @@
        <p>Dividir</p>
      </div>
      </div>
-     <div class="button" on:click={showChallengePanel}> ⬅️ Voler Atras</div>
+     <div class="button" on:click={showChallengePanel}> ⬅️ Volver Atras</div>
 </div>
 
 <style>
