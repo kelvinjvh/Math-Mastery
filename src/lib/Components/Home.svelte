@@ -4,6 +4,7 @@
 </script>
 
 <div class="operation-panel">
+ 
   <div class="operation-row">
     <div class="operation-button" on:click={() => showComponent("➕")}>
       <p class="operation-sign">➕</p>
@@ -33,6 +34,7 @@
     place-items: center;
     margin-top: 5em;
   }
+
   .operation-row {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
