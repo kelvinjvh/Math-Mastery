@@ -61,7 +61,7 @@
   }
   p {
     margin: 0;
-    width: 120px;
+    width: 150px;
     font-weight: bold;
   }
   span {
