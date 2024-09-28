@@ -9,7 +9,7 @@
   export let ShowComponentCanvas;
 </script>
 
-<Header {ShowComponentCanvas}/>
+<Header {ShowComponentCanvas} />
 <h2>Operaciones Matematicas!!</h2>
 <div class="box_operation">
   {#each listNumbers as number}
@@ -29,7 +29,7 @@
           type="number"
           bind:value={number.answer}
           on:input={() => verification(number)}
-        /> <span>{number.feedback === "" ? "❓" : number.feedback}</span>
+        /> <span class="feedback">{number.feedback === "" ? "❓" : number.feedback}</span>
       </div>
     {/if}
   {/each}
@@ -62,13 +62,14 @@
   p {
     margin: 0;
     width: 120px;
+    font-weight: bold;
   }
-  span{
-    font-size: .7em;
+  span {
+    font-size: 0.7em;
   }
   input {
-    width: 60px;
-    height: 30px;
+    width: 70px;
+    height: 40px;
     border: none;
     outline: none;
     background-color: #fff;
@@ -79,17 +80,19 @@
     font-size: 0.8em;
     font-weight: bold;
   }
-  span {
+  .feedback {
     width: 20px;
+    font-size: 1em;
   }
   .box_button {
     width: 100%;
   }
   button {
-    background-color: rgb(33, 150, 43);
+    background-color: #38b48b;
     color: #fff;
     font-weight: bold;
     display: inline-block;
     font-size: 1.2em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 </style>

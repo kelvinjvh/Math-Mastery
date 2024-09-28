@@ -27,13 +27,13 @@
   .button {
     padding: 1em;
     border-radius: 5px;
-    background-color: rgb(33, 150, 43);
-    color: #fff;
+    background-color: #FFC107;
+    color: #F5F5F5;
     font-weight: bold;
     font-size: 1.5em;
     transition: 0.5s;
     width: 90%;
-    margin: 0 auto 1em;
+    margin: 0 auto 1.8em;
     text-align: start;
     display: grid;
     place-items: center;
