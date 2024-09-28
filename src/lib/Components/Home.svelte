@@ -1,48 +1,46 @@
 <script>
-  import Header from "./Header.svelte";
-
   export let showComponent;
   export let showChallengePanel;
 </script>
 
-<div class="container">
-  <div class="row">
-    <div class="functions" on:click={() => showComponent("➕")}>
-      <p class="signo">➕</p>
-       <p>Sumar</p>
-     </div>
-     <div class="functions" on:click={() => showComponent("➖")}>
-       <p class="signo">➖</p>
-       <p>Restar</p>
-     </div>
-     <div class="functions" on:click={() => showComponent("✖")}>
-       <p class="signo">✖️</p>
-       <p>Multiplicar</p>
-     </div>
-     <div class="functions" on:click={() => showComponent("➗")}>
-       <p class="signo">➗</p>
-       <p>Dividir</p>
-     </div>
-     </div>
-     <div class="button" on:click={showChallengePanel}> ⬅️ Volver Atras</div>
+<div class="operation-panel">
+  <div class="operation-row">
+    <div class="operation-button" on:click={() => showComponent("➕")}>
+      <p class="operation-sign">➕</p>
+      <p>Sumar</p>
+    </div>
+    <div class="operation-button" on:click={() => showComponent("➖")}>
+      <p class="operation-sign">➖</p>
+      <p>Restar</p>
+    </div>
+    <div class="operation-button" on:click={() => showComponent("✖")}>
+      <p class="operation-sign">✖️</p>
+      <p>Multiplicar</p>
+    </div>
+    <div class="operation-button" on:click={() => showComponent("➗")}>
+      <p class="operation-sign">➗</p>
+      <p>Dividir</p>
+    </div>
+  </div>
+  <div class="back-button" on:click={showChallengePanel}>⬅️ Volver Atras</div>
 </div>
 
 <style>
-  .container {
+  .operation-panel {
     width: 100%;
     height: 60vh;
     display: grid;
     place-items: center;
     margin-top: 5em;
   }
-  .row{
+  .operation-row {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 3em;
-    margin-bottom: 1em;
+    margin-bottom: 3em;
   }
-  .functions {
-    background-color: #FFC107;
+  .operation-button {
+    background-color: #ffc107;
     border-radius: 5px;
     padding: 1em;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -50,11 +48,6 @@
     width: 130px;
     display: grid;
     place-items: center;
-   
-  }
-  img {
-    height: 100px;
-    width: 100px;
   }
   p {
     margin: 0;
@@ -62,17 +55,18 @@
     font-size: 1em;
     font-weight: bold;
   }
-  .signo{
-    font-size:2.5em;
+  .operation-sign {
+    font-size: 2.5em;
   }
-  .button {
+  .back-button {
     width: 84%;
     padding: 1em;
-    background-color: #FFC107;
+    background-color: #ffc107;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     font-weight: bold;
     font-size: 1em;
     margin: 0 auto;
+    text-align: center;
   }
 </style>

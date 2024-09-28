@@ -54,31 +54,30 @@
 
 </script>
 
-<div class="container_canvas">
-  <div class="content_btn">
-    <p class="btnClear" on:click={ClearCanvas}>🔄</p>
-    <p class="btn_close" on:click={ShowComponentCanvas}>❌</p>
+<div class="canvas-container">
+  <div class="button-panel">
+    <p class="reset-button" on:click={ClearCanvas}>🔄</p>
+    <p class="close-button" on:click={ShowComponentCanvas}>❌</p>
   </div>
-  
 </div>
 <canvas
     bind:this={canvas}
     on:touchstart={startPosition}
     on:touchend={finishedPosition}
     on:touchmove={draw}
-    class="canvas"
-  ></canvas>
+    class="drawing-canvas"
+></canvas>
 
 <style>
-  .container_canvas {
+  .canvas-container {
     height: 95vh; /* Ocupa toda la altura de la ventana */
     width: 100vw; /* Ocupa todo el ancho de la ventana */
     position: relative; /* Para poder posicionar el botón correctamente */
     overflow: hidden; /* Para evitar desplazamiento */
   }
 
-  .canvas {
-    background-color: #111;
+  .drawing-canvas {
+    background-color: #1a1a3f;
     position: absolute;
     top: 0;
     left: 0;
@@ -86,7 +85,7 @@
     height: 100%; /* Asegúrate de que el canvas ocupe el 100% del contenedor */
   }
 
-  .content_btn {
+  .button-panel {
     width: 90%;
     margin: 0 auto;
     display: flex;
@@ -94,21 +93,31 @@
     position: relative; /* Para posicionar el botón dentro de este contenedor */
     z-index: 10; /* Asegura que esté sobre el canvas */
   }
-  .btnClear{
-   padding:0 .8em;
-   background-color: #fff;
-   border-radius: 5px;
-   font-weight: bold;
-   font-size: 2em;
-   cursor: pointer;
+
+  .reset-button {
+    padding: 0 0.8em;
+    background-color: #38b48b;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
   }
-  .btn_close {
+
+  .close-button {
     height: 50px;
     width: 50px;
-    background-color: #fff;
+    background-color: #38b48b;
     border-radius: 50%;
     display: grid;
     place-items: center;
     font-size: 1.5em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .close-button:hover {
+    background-color: #f0f0f0; /* Color de fondo al pasar el mouse */
   }
 </style>
+

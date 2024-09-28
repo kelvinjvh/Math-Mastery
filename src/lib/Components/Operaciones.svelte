@@ -8,8 +8,8 @@
   export let showComponent;
   export let Rangodifficulty;
 
-  function ShowComponentCanvas(){
-    showCanvas=!showCanvas;
+  function ShowComponentCanvas() {
+    showCanvas = !showCanvas;
   }
 
   function generateNumber(count) {
@@ -63,7 +63,7 @@
 </script>
 
 {#if showCanvas}
-  <Canvas {ShowComponentCanvas}/>
+  <Canvas {ShowComponentCanvas} />
 {:else}
   <ListData
     {listNumbers}
