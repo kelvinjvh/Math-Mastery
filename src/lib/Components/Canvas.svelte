@@ -43,6 +43,7 @@
 
     ctx.lineTo(x, y);
     ctx.stroke();
+    ctx.strokeStyle="#fff";
     ctx.beginPath();
     ctx.moveTo(x, y);
   }
@@ -77,7 +78,7 @@
   }
 
   .canvas {
-    background-color: rgb(255, 232, 27);
+    background-color: #111;
     position: absolute;
     top: 0;
     left: 0;
@@ -95,7 +96,7 @@
   }
   .btnClear{
    padding:0 .8em;
-   background-color: #222;
+   background-color: #fff;
    border-radius: 5px;
    font-weight: bold;
    font-size: 2em;
@@ -104,7 +105,7 @@
   .btn_close {
     height: 50px;
     width: 50px;
-    background-color: #333;
+    background-color: #fff;
     border-radius: 50%;
     display: grid;
     place-items: center;
