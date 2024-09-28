@@ -4,7 +4,7 @@
   export let ShowComponentCanvas;
   let canvas;
   let ctx; // Solo declara ctx aquí
-
+  let colorPincel = "#fff";
   let painting = false;
 
   // Configurar el canvas cuando el componente se monte
@@ -43,7 +43,7 @@
 
     ctx.lineTo(x, y);
     ctx.stroke();
-    ctx.strokeStyle="#fff";
+    ctx.strokeStyle=colorPincel;
     ctx.beginPath();
     ctx.moveTo(x, y);
   }
@@ -57,6 +57,9 @@
 <div class="canvas-container">
   <div class="button-panel">
     <p class="reset-button" on:click={ClearCanvas}>🔄</p>
+    <form>
+      <input type="color" bind:value={colorPincel}>
+    </form>
     <p class="close-button" on:click={ShowComponentCanvas}>❌</p>
   </div>
 </div>
@@ -89,6 +92,7 @@
     width: 90%;
     margin: 0 auto;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     position: relative; /* Para posicionar el botón dentro de este contenedor */
     z-index: 10; /* Asegura que esté sobre el canvas */
