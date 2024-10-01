@@ -1,8 +1,8 @@
 <script>
-    export let ShowComponentCanvas;
+    export let showCanvasComponent;
 </script>
 <div class="header">
-    <div class="pencil" on:click={ShowComponentCanvas}>✏️</div>
+    <div class="pencil" on:click={showCanvasComponent}>✏️</div>
 </div>
 
 <style>

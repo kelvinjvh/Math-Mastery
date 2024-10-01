@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
 
-  export let ShowComponentCanvas;
+  export let showCanvasComponent;
   let canvas;
   let ctx; // Solo declara ctx aquí
   let colorPincel = "#fff";
@@ -60,7 +60,7 @@
     <form>
       <input type="color" bind:value={colorPincel}>
     </form>
-    <p class="close-button" on:click={ShowComponentCanvas}>❌</p>
+    <p class="close-button" on:click={showCanvasComponent}>❌</p>
   </div>
 </div>
 <canvas

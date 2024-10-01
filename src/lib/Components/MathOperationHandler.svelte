@@ -3,16 +3,16 @@
   import OperationsMathComponet from "./OperationsMathComponet.svelte";
 
   let ListOperationsMath = [];
-  let showCanvas = false;
+  let canvasVisible = false;
   export let operationSymbol;
   export let toggleMathOperationComponent;
   export let difficultyLevel;
 
-  function ShowComponentCanvas() {
-    showCanvas = !showCanvas;
+  function showCanvasComponent() {
+    canvasVisible = !canvasVisible;
   }
 
-  function generateNumber(count) {
+  function generateMathOperations(count) {
     ListOperationsMath = [];
     for (let index = 0; index < count; index++) {
       let n1 = Math.ceil(Math.random() * difficultyLevel);
@@ -50,7 +50,7 @@
     }
   }
 
-  generateNumber(6);
+  generateMathOperations(6);
 
   function AnswerVerification(number) {
     if (parseInt(number.correctAnswer) === parseInt(number.answer)) {
@@ -62,15 +62,15 @@
   }
 </script>
 
-{#if showCanvas}
-  <Canvas {ShowComponentCanvas} />
+{#if canvasVisible}
+  <Canvas {showCanvasComponent} />
 {:else}
   <OperationsMathComponet
     {ListOperationsMath}
     {operationSymbol}
     {toggleMathOperationComponent}
-    {generateNumber}
+    {generateMathOperations}
     {AnswerVerification}
-    {ShowComponentCanvas}
+    {showCanvasComponent}
   />
 {/if}

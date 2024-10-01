@@ -4,15 +4,15 @@
   export let operationSymbol;
   export let ListOperationsMath;
   export let toggleMathOperationComponent;
-  export let generateNumber;
-  export let ShowComponentCanvas;
+  export let generateMathOperations;
+  export let showCanvasComponent;
 </script>
 
-<Header {ShowComponentCanvas} />
+<Header {showCanvasComponent} />
 <h2 class="title">Operaciones Matemáticas!!</h2>
 <div class="operation-container">
   {#each ListOperationsMath as mathOperation}
-    {#if operationSymbol === "➖" && mathOperation.n1 < mathOperation.n2}
+    {#if operationSymbol === "➖" || operationSymbol === "❌" && mathOperation.n1 < mathOperation.n2}
       <div class="operation-item">
         <p>{mathOperation.n2} <span>{operationSymbol}</span> {mathOperation.n1}</p>
         =<input
@@ -37,7 +37,7 @@
   {/each}
   <div class="button-container">
     <button on:click={toggleMathOperationComponent}>Reiniciar 🔄</button>
-    <button on:click={() => generateNumber(6)}>Siguiente 👉</button>
+    <button on:click={() => generateMathOperations(6)}>Siguiente 👉</button>
   </div>
 </div>
 
