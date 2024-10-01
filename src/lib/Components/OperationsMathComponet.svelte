@@ -1,10 +1,9 @@
 <script>
   import Header from "./Header.svelte";
-
-  export let verification;
-  export let operationSigno;
-  export let listNumbers;
-  export let showComponent;
+  export let AnswerVerification;
+  export let operationSymbol;
+  export let ListOperationsMath;
+  export let toggleMathOperationComponent;
   export let generateNumber;
   export let ShowComponentCanvas;
 </script>
@@ -12,32 +11,32 @@
 <Header {ShowComponentCanvas} />
 <h2 class="title">Operaciones Matemáticas!!</h2>
 <div class="operation-container">
-  {#each listNumbers as number}
-    {#if operationSigno === "➖" && number.n1 < number.n2}
+  {#each ListOperationsMath as mathOperation}
+    {#if operationSymbol === "➖" && mathOperation.n1 < mathOperation.n2}
       <div class="operation-item">
-        <p>{number.n2} <span>{operationSigno}</span> {number.n1}</p>
+        <p>{mathOperation.n2} <span>{operationSymbol}</span> {mathOperation.n1}</p>
         =<input
           type="number"
-          bind:value={number.answer}
-          on:input={() => verification(number)}
-        /> <span>{number.feedback === "" ? "❓" : number.feedback}</span>
+          bind:value={mathOperation.answer}
+          on:input={() => AnswerVerification(mathOperation)}
+        /> <span>{mathOperation.feedback === "" ? "❓" : mathOperation.feedback}</span>
       </div>
     {:else}
       <div class="operation-item">
-        <p>{number.n1} <span>{operationSigno}</span> {number.n2}</p>
+        <p>{mathOperation.n1} <span>{operationSymbol}</span> {mathOperation.n2}</p>
         =<input
           type="number"
-          bind:value={number.answer}
-          on:input={() => verification(number)}
+          bind:value={mathOperation.answer}
+          on:input={() => AnswerVerification(mathOperation)}
         />
         <span class="feedback"
-          >{number.feedback === "" ? "❓" : number.feedback}</span
+          >{mathOperation.feedback === "" ? "❓" : mathOperation.feedback}</span
         >
       </div>
     {/if}
   {/each}
   <div class="button-container">
-    <button on:click={showComponent}>Reiniciar 🔄</button>
+    <button on:click={toggleMathOperationComponent}>Reiniciar 🔄</button>
     <button on:click={() => generateNumber(6)}>Siguiente 👉</button>
   </div>
 </div>

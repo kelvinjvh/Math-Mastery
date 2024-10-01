@@ -1,5 +1,5 @@
 <script>
-  export let showChallengePanel;
+  export let toggleChallengePanel;
 </script>
 
 <div class="challenge-panel">
@@ -11,16 +11,16 @@
     <span>🤔</span>
   </div>
   <div class="challenge-center">
-    <div class="challenge-button" on:click={() => showChallengePanel(10)}>
+    <div class="challenge-button" on:click={() => toggleChallengePanel(10)}>
       <span>Fácil 😀</span>
     </div>
-    <div class="challenge-button" on:click={() => showChallengePanel(30)}>
+    <div class="challenge-button" on:click={() => toggleChallengePanel(30)}>
       <span>Intermedio 🤔</span>
     </div>
-    <div class="challenge-button" on:click={() => showChallengePanel(60)}>
+    <div class="challenge-button" on:click={() => toggleChallengePanel(80)}>
       <span>Avanzado 🚀</span>
     </div>
-    <div class="challenge-button" on:click={() => showChallengePanel(100)}>
+    <div class="challenge-button" on:click={() => toggleChallengePanel(100)}>
       <span>Experto 🧠</span>
     </div>
   </div>
@@ -58,9 +58,6 @@
     color: #f5f5f5;
     font-weight: bold;
     font-size: 1.5em;
-    transition:
-      transform 0.3s,
-      background-color 0.3s; /* Agregué transición para el color de fondo */
     width: 90%;
     margin: 0 auto 1.8em;
     text-align: center; /* Cambié a 'center' para centrar el texto */

@@ -1,26 +1,26 @@
 <script>
   import Canvas from "./Canvas.svelte";
-  import ListData from "./ListData.svelte";
+  import OperationsMathComponet from "./OperationsMathComponet.svelte";
 
-  let listNumbers = [];
+  let ListOperationsMath = [];
   let showCanvas = false;
-  export let operationSigno;
-  export let showComponent;
-  export let Rangodifficulty;
+  export let operationSymbol;
+  export let toggleMathOperationComponent;
+  export let difficultyLevel;
 
   function ShowComponentCanvas() {
     showCanvas = !showCanvas;
   }
 
   function generateNumber(count) {
-    listNumbers = [];
+    ListOperationsMath = [];
     for (let index = 0; index < count; index++) {
-      let n1 = Math.ceil(Math.random() * Rangodifficulty);
-      let n2 = Math.ceil(Math.random() * Rangodifficulty);
+      let n1 = Math.ceil(Math.random() * difficultyLevel);
+      let n2 = Math.ceil(Math.random() * difficultyLevel);
 
       let correctAnswer;
 
-      switch (operationSigno) {
+      switch (operationSymbol) {
         case "➕":
           correctAnswer = n1 + n2;
           break;
@@ -40,7 +40,7 @@
           break;
       }
 
-      listNumbers.push({
+      ListOperationsMath.push({
         n1,
         n2,
         answer: "",
@@ -52,25 +52,25 @@
 
   generateNumber(6);
 
-  function verification(number) {
+  function AnswerVerification(number) {
     if (parseInt(number.correctAnswer) === parseInt(number.answer)) {
       number.feedback = "✅";
     } else {
       number.feedback = "❌";
     }
-    listNumbers = [...listNumbers];
+    ListOperationsMath = [...ListOperationsMath];
   }
 </script>
 
 {#if showCanvas}
   <Canvas {ShowComponentCanvas} />
 {:else}
-  <ListData
-    {listNumbers}
-    {operationSigno}
-    {showComponent}
+  <OperationsMathComponet
+    {ListOperationsMath}
+    {operationSymbol}
+    {toggleMathOperationComponent}
     {generateNumber}
-    {verification}
+    {AnswerVerification}
     {ShowComponentCanvas}
   />
 {/if}

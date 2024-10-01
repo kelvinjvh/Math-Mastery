@@ -1,30 +1,29 @@
 <script>
   import ChallengePanel from "./lib/Components/ChallengePanel.svelte";
   import Home from "./lib/Components/Home.svelte";
-  import Operaciones from "./lib/Components/Operaciones.svelte";
+  import MathOperationHandler from "./lib/Components/MathOperationHandler.svelte";
 
-  let component = false;
-  let operationSigno = "";
-  let ShowPanelOperations = true;
-  let Rangodifficulty;
+  let ShowMathOperationComponent = false;
+  let operationSymbol = "";
+  let ShowOperationsPanel = true;
+  let difficultyLevel;
 
-  function showComponent(signo) {
-    component = !component;
-    operationSigno = signo;
+  function toggleMathOperationComponent(symbol) {
+    ShowMathOperationComponent = !ShowMathOperationComponent;
+    operationSymbol = symbol;
   }
 
-  function showChallengePanel(difficulty) {
-    ShowPanelOperations = !ShowPanelOperations;
-    Rangodifficulty = difficulty;
-    console.log(difficulty);
+  function toggleChallengePanel(difficulty) {
+    ShowOperationsPanel = !ShowOperationsPanel;
+    difficultyLevel = difficulty;
   }
 
 </script>
 
-{#if ShowPanelOperations}
-  <ChallengePanel {showChallengePanel} />
-{:else if component}
-  <Operaciones {operationSigno} {showComponent} {Rangodifficulty} />
+{#if ShowOperationsPanel}
+  <ChallengePanel {toggleChallengePanel} />
+{:else if ShowMathOperationComponent}
+  <MathOperationHandler {operationSymbol} {toggleMathOperationComponent} {difficultyLevel} />
 {:else}
-  <Home {showComponent} {showChallengePanel} />
+  <Home {toggleMathOperationComponent} {toggleChallengePanel} />
 {/if}

@@ -1,29 +1,28 @@
 <script>
-  export let showComponent;
-  export let showChallengePanel;
+  export let toggleMathOperationComponent;
+  export let toggleChallengePanel;
 </script>
 
 <div class="operation-panel">
- 
   <div class="operation-row">
-    <div class="operation-button" on:click={() => showComponent("➕")}>
+    <div class="operation-button" on:click={() => toggleMathOperationComponent("➕")}>
       <p class="operation-sign">➕</p>
       <p>Sumar</p>
     </div>
-    <div class="operation-button" on:click={() => showComponent("➖")}>
+    <div class="operation-button" on:click={() => toggleMathOperationComponent("➖")}>
       <p class="operation-sign">➖</p>
       <p>Restar</p>
     </div>
-    <div class="operation-button" on:click={() => showComponent("✖")}>
+    <div class="operation-button" on:click={() => toggleMathOperationComponent("✖")}>
       <p class="operation-sign">✖️</p>
       <p>Multiplicar</p>
     </div>
-    <div class="operation-button" on:click={() => showComponent("➗")}>
+    <div class="operation-button" on:click={() => toggleMathOperationComponent("➗")}>
       <p class="operation-sign">➗</p>
       <p>Dividir</p>
     </div>
   </div>
-  <div class="back-button" on:click={showChallengePanel}>⬅️ Volver Atras</div>
+  <div class="back-button" on:click={toggleChallengePanel}>⬅️ Volver Atras</div>
 </div>
 
 <style>
