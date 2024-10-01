@@ -54,7 +54,7 @@
   .challenge-button {
     padding: 1em;
     border-radius: 8px; /* Aumenté el radio para un efecto más suave */
-    background-color: #ffc107;
+    background-color: var(--primary-color);
     color: #f5f5f5;
     font-weight: bold;
     font-size: 1.5em;
@@ -67,7 +67,7 @@
 
   .challenge-button:hover {
     transform: scale(1.1);
-    background-color: #ffa000; /* Cambio de color al pasar el mouse */
+    background-color: var(--primary-color); /* Cambio de color al pasar el mouse */
   }
 
   span {

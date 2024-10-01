@@ -41,7 +41,7 @@
     margin-bottom: 3em;
   }
   .operation-button {
-    background-color: #ffc107;
+    background-color: var(--primary-color);
     border-radius: 5px;
     padding: 1em;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -62,7 +62,7 @@
   .back-button {
     width: 84%;
     padding: 1em;
-    background-color: #ffc107;
+    background-color: var(--primary-color);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     font-weight: bold;

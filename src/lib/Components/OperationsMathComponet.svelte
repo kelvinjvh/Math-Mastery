@@ -12,7 +12,7 @@
 <h2 class="title">Operaciones Matemáticas!!</h2>
 <div class="operation-container">
   {#each ListOperationsMath as mathOperation}
-    {#if operationSymbol === "➖" || operationSymbol === "❌" && mathOperation.n1 < mathOperation.n2}
+    {#if operationSymbol === "➖" || operationSymbol === "✖" && mathOperation.n1 < mathOperation.n2}
       <div class="operation-item">
         <p>{mathOperation.n2} <span>{operationSymbol}</span> {mathOperation.n1}</p>
         =<input
@@ -105,7 +105,7 @@ input {
 }
 
 button {
-  background-color: #38b48b;
+  background-color: var(--secondary-color);
   color: #fff;
   font-weight: bold;
   display: inline-block;
@@ -115,10 +115,6 @@ button {
   border-radius: 5px; /* Bordes redondeados para los botones */
   padding: 0.5em 1em; /* Padding para los botones */
   cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-}
-
-button:hover {
-  background-color: #32a574; /* Color más oscuro al pasar el ratón */
 }
 
 </style>

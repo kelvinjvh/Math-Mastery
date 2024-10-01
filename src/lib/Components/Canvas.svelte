@@ -100,7 +100,7 @@
 
   .reset-button {
     padding: 0 0.8em;
-    background-color: #38b48b;
+    background-color: var(--secondary-color);
     border-radius: 5px;
     font-weight: bold;
     font-size: 2em;
@@ -111,17 +111,13 @@
   .close-button {
     height: 50px;
     width: 50px;
-    background-color: #38b48b;
+    background-color: var(--secondary-color);
     border-radius: 50%;
     display: grid;
     place-items: center;
     font-size: 1.5em;
     cursor: pointer;
-    transition: background-color 0.3s;
-  }
 
-  .close-button:hover {
-    background-color: #f0f0f0; /* Color de fondo al pasar el mouse */
   }
 </style>
 
