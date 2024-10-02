@@ -1,4 +1,8 @@
-:root{
-    --primary-color:#ffc107;
-    --secondary-color: #38b48b;
+:root {
+  --primary-color: #ffc107;
+  --secondary-color: #38b48b;
+}
+.protocolos{
+  color: #38b48b;
+  text-decoration: none;
 }
